@@ -1,0 +1,98 @@
+:root {
+    --purple: #8A2BE2;
+    --green: #00ff41;
+    --blue: #00e0ff;
+    --dark: #0a0a0f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--dark);
+    color: white;
+    font-family: monospace;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.card {
+    aspect-ratio: 1;
+    background: var(--purple);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    user-select: none;
+}
+
+.card.flipped {
+    background: var(--green);
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    background: #00ff41;
+    cursor: default;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    background: var(--blue);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
