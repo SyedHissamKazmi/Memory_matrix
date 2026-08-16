@@ -2,25 +2,63 @@
 
 A memory card game built for **College Tech Fest 2025**.
 
-## Features
+![HTML](https://img.shields.io/badge/HTML-5-orange)
+![CSS](https://img.shields.io/badge/CSS-3-blue)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Static Site](https://img.shields.io/badge/Hosting-Hugging%20Face-ffcc00)
 
-- Multiple difficulty levels (Easy, Medium, Hard)
+## 🌐 Live Demo
+
+Play the game here: [Memory Matrix on Hugging Face](https://huggingface.co/spaces/syed-hissam-kazmi/Memory-Matrix)
+
+## ✨ Features
+
+- Multiple difficulty levels: Easy, Medium, Hard
 - Move counter and timer
 - Best score saved in browser
 - Sound effects toggle
 - Fullscreen mode
 - Mobile responsive
 
-## How to Run
+## 🧩 How to Play
 
-Open `index.html` in any modern browser.
+1. Click or tap a card to flip it.
+2. Find two matching cards.
+3. Match all pairs before the timer ends.
+4. Try to complete the game in the fewest moves.
 
-## Technologies Used
+## 🛠 Technologies Used
 
 - HTML
 - CSS
 - JavaScript
 
-## License
+## 📁 Project Structure
 
-This project is for educational purposes.
+```text
+Memory_matrix/
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+└── LICENSE
+```
+
+## 🚀 Run Locally
+
+Open `index.html` in any modern browser.
+
+## 📸 Screenshot
+
+![Memory Matrix](screenshot.png)
+
+## 👤 Author
+
+Created by **Syed Hissam Kazmi**
+
+- GitHub: [SyedHissamKazmi](https://github.com/SyedHissamKazmi)
+
+## 📄 License
+
+MIT License
