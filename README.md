@@ -49,10 +49,6 @@ Memory_matrix/
 
 Open `index.html` in any modern browser.
 
-## 📸 Screenshot
-
-![Memory Matrix](screenshot.png)
-
 ## 👤 Author
 
 Created by **Syed Hissam Kazmi**
