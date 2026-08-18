@@ -1,3 +1,13 @@
+---
+title: Memory Matrix
+emoji: 🚀
+colorFrom: purple
+colorTo: blue
+sdk: static
+pinned: true
+license: mit
+short_description: A neon memory card game with difficulty levels, timer, and b
+---
 # Memory Matrix
 
 A memory card game built for **College Tech Fest 2025**.
