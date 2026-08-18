@@ -8,6 +8,7 @@ A memory card game built for **College Tech Fest 2025**.
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Static Site](https://img.shields.io/badge/Hosting-Hugging%20Face-ffcc00)
 ![Docker Build](https://github.com/SyedHissamKazmi/ai-image-detector/actions/workflows/docker-image.yml/badge.svg)
+![Hugging Face Sync](https://github.com/SyedHissamKazmi/Memory_matrix/actions/workflows/hf-sync.yml/badge.svg)
 
 ## 🌐 Live Demo
 
