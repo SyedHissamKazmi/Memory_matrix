@@ -7,6 +7,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,5 +18,4 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git remote add hf https://huggingface.co/spaces/syed-hissam-kazmi/Memory-Matrix.git
-          git push hf main --force
+          git push --force https://x-access-token:${HF_TOKEN}@huggingface.co/spaces/syed-hissam-kazmi/Memory-Matrix.git HEAD:main
