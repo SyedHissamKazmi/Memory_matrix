@@ -3,6 +3,7 @@
     --green: #00ff41;
     --blue: #00e0ff;
     --dark: #0a0a0f;
+    --card-bg: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -12,11 +13,14 @@
 }
 
 body {
-    background: var(--dark);
+    background: radial-gradient(circle at 10% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 90% 70%, rgba(0, 224, 255, 0.15) 0%, transparent 50%),
+                var(--dark);
     color: white;
-    font-family: monospace;
+    font-family: 'Segoe UI', monospace, sans-serif;
     min-height: 100vh;
     padding: 20px;
+    text-align: center;
 }
 
 .header {
@@ -24,7 +28,8 @@ body {
     margin-bottom: 20px;
     background: linear-gradient(90deg, var(--purple), var(--blue));
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
 }
 
 .stats {
@@ -32,13 +37,18 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .stat-box {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 .grid {
@@ -50,27 +60,52 @@ body {
 }
 
 .card {
+    position: relative;
+    width: 100%;
     aspect-ratio: 1;
-    background: var(--purple);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
     cursor: pointer;
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
+    perspective: 800px;
     user-select: none;
 }
 
-.card.flipped {
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background: var(--purple);
+}
+
+.card-back {
     background: var(--green);
     transform: rotateY(180deg);
 }
 
-.card.matched {
+.card.matched .card-back {
     background: #00ff41;
-    cursor: default;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
 }
 
 .controls {
@@ -89,10 +124,19 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 224, 255, 0.4);
 }
 
 @media (max-width: 480px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
