@@ -82,15 +82,21 @@ function generateGrid(pairs) {
     for (let i = 1; i <= pairs; i++) {
         cards.push(i, i);
     }
-    cards = cards.sort(() => Math.random() - 0.5);
+    cards.sort(() => Math.random() - 0.5);
 
-    cards.forEach((value, index) => {
+    cards.forEach((value) => {
         const card = document.createElement('div');
         card.className = 'card';
         card.dataset.value = value;
-        card.dataset.index = index;
-        card.textContent = '?';
-        card.onclick = () => flipCard(card);
+
+        card.innerHTML = `
+            <div class="card-inner">
+                <div class="card-face card-front">?</div>
+                <div class="card-face card-back">${value}</div>
+            </div>
+        `;
+
+        card.addEventListener('click', () => flipCard(card));
         gridEl.appendChild(card);
     });
 
@@ -106,7 +112,6 @@ function flipCard(card) {
     ) return;
 
     card.classList.add('flipped');
-    card.textContent = card.dataset.value;
     game.flippedCards.push(card);
     playBeep('flip');
 
@@ -137,8 +142,6 @@ function checkMatch() {
         setTimeout(() => {
             card1.classList.remove('flipped');
             card2.classList.remove('flipped');
-            card1.textContent = '?';
-            card2.textContent = '?';
             game.flippedCards = [];
         }, 1000);
     }
