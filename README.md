@@ -7,6 +7,7 @@ A memory card game built for **College Tech Fest 2025**.
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Static Site](https://img.shields.io/badge/Hosting-Hugging%20Face-ffcc00)
+![Docker Build](https://github.com/SyedHissamKazmi/ai-image-detector/actions/workflows/docker-image.yml/badge.svg)
 
 ## 🌐 Live Demo
 
